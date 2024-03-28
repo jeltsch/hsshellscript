@@ -1,11 +1,11 @@
 -- HsShellScript main module
 module HsShellScript (
-              -- * Command Line Arguments Command line arguments are handled by the module "HsShellScript.Args",
-              -- which is reexported by "HsShellScript".
+              -- * Command Line Arguments
               module HsShellScript.Args,
 
               -- * Paths and Directories
               mkdir, rmdir, pwd, cd, realpath, realpath_s, path_exists, path_exists', is_file, is_dir, with_wd,
+              
               -- ** Parsing and Composing Paths
               module HsShellScript.Paths,
 

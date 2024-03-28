@@ -10,7 +10,7 @@ HsShellScript will be downloaded and installed automatically.
 
 ## Documentation 
 
-There isn't any example at the moment. You need to read the API documentation.
+The documentation is in the API documentation. There you'll also find some examples.
 
 ## License
 
