@@ -1,0 +1,13 @@
+This is HsShellScript, a library which enables you to use Haskell for tasks which
+are typically done by shell scripts. It requires the Glasgow Haskell Compiler.
+
+The installation instructions are in the user manual. It is located in the "manual"
+subdirectory. 
+
+HsShellScript is released under the terms of the GNU Lesser General Public License
+(LGPL), version 2.1, or any later version. A copy of the license is included in
+the user manual.
+
+The homepage is at http://www.volker-wysk.de/hsshellscript.
+
+Volker Wysk <post@volker-wysk.de>

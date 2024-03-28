@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1>GHC-Libraries needed for HsShellScript</H1>
+
+<p>In order to use HsShellScript's exception handling, you'll have to import
+some and restrict some GHC-libraries (all of which are included in GHC). The
+following source code will to the trick:
+
+
+<br><code>
+<br>import Prelude hiding (catch)
+<br>import IO hiding (catch)
+<br>import Control.Exception
+<br>import HsShellScript
+</code>
+
+
+<P STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm">
+<small><a href="index.html">HsShellScript User Manual main page</a></small></P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040204;11123200">
+	<META NAME="CHANGED" CONTENT="20040921;23052000">
+</HEAD>
+<BODY LANG="de-DE" DIR="LTR">
+<H2>Building and Installing HsShellScript</H2>
+
+<p>HsShellScript is cabalized, which means that building and installing is a
+  matter of some calls to <tt>cabal</tt>. However, it also provides a
+  Makefile, which further simplifies the installation.
+
+<p>In order to install, unpack the source distribution somewhere. Go to the
+  directory, and call <tt>make</tt>. This will compile the library. If you want
+  to install it locally, in your user account, then do <tt>make
+  install-user</tt>. This calls <tt>cabal install --user</tt>. If you want to
+  install the library globally, do <tt>make install-global</tt>. You will be
+  prompted for the root password, which is needed in this case. This
+  calls <tt>sudo cabal install --global</tt>.
+
+<p>If installed as a user package, then the location of the API documentation
+  is <tt>~/.cabal/share/doc/hsshellscript-3.3.1/html/index.html</tt>. If it is
+  installed globaly, it
+  is <tt>/usr/local/share/doc/hsshellscript-3.3.1/html/index.html</tt>. 
+
+<p>Cabal's Simple Build Infrastructure doesn't provide any means to add extra
+  documenation to a project. Therefore the user manual isn't installed by default.
+  If you need it, you can just copy the "manual" directory anywhere you like,
+  but the Makefile privides
+  the make target <tt>install-manual</tt>, which copies the files to
+  <tt>/usr/local/share/hsshellscript/manual</tt>.
+
+
+<p>Further information about the Cabal can be found here:
+<a href="http://www.haskell.org/cabal/">The Haskell Cabal</a>
+
+
+<P STYLE="border-top: 1px solid #000000; border-bottom: none; border-left:
+          none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm;
+          padding-left: 0cm; padding-right:
+          0cm"><A HREF="index.html"><FONT SIZE=2>HsShellScript User Manual main
+          page</FONT></A></P>
+</BODY>
+</HTML>

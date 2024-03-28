@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040206;20494700">
+	<META NAME="CHANGED" CONTENT="20040206;21432900">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H2>HsShellScript Features</H2>
+
+<h3>Command Line Argument Parser</h3><p>
+    HsShellScript has facilities for managing command line arguments, which are
+    easier to use than the GHC library GetOpt. Command line
+    arguments are specified as lists of properties. HsShellScript builds on top
+    of GHC's GetOpt, but hides it completely. Command line arguments handling
+    has been added because GetOpt was found to be too cumbersome.</p>
+<h3>Easy Interface to External Programs</h3><p>
+    Calling programs and recognizing errors (via exitcode or exception) is made more easy. There are front end functions for common programs, such as
+    <tt>/bin/mv</tt> or <tt>/bin/chmod</tt>. </p>
+<h3>Analyzing Paths</h3><p>
+    Dealing with paths is not as trivial as it sounds. Take, for example
+    <tt>../foo.bar//./../baz/</tt> (and split off the extension of the file
+    name...). HsShellScript solves this thoroughly and provides functions for such
+    tasks as splitting a path in directory and file name parts, splitting a path
+    into path components, or syntactically normalising paths.</p>
+<h3>Redirecting Input and Output</h3><p>
+    HsShellScript defines operators like <tt>->-</tt> and <tt>->>-</tt> which work like
+    redirection operators in shells.</p>
+<h3>Building Pipes</h3><p>
+    Reading the output of an external program, or piping the output of one
+    program into the input of another, is almost as easy as in shells.
+    HsShellScript provides corresponding operators.</p>
+<h3>Error Handling</h3><p>
+    Error handling is one thing which is done more thoroughly in
+    HsShellScript than in shells. Failed programs won't be silently ignored.
+    Exceptions are used for error handling. Non zero exit codes
+    are thrown as exceptions.</p>
+<h3>Quoting of Strings and Building Commands for Shells</h3><p>
+    Taking care of shell metacharacters usually isn't done right. HsShellScript
+    provides functions for doing it safely.</p>
+<h3>Non-broken, Secure Functions for Creating Temporary Files and Directories</h3><p>
+    The standard C library has <tt>mkstemp</tt>, <tt>mktemp</tt>, <tt>tempnam</tt>, <tt>tmpfile</tt> and <tt>tmpnam</tt>, which are all broken,
+    non-portable or unsuitable in some way.</p>
+</dl>
+
+<P STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm">
+<small><a href="index.html">HsShellScript User Manual main page</a></small></P>
+</BODY>
+</HTML>
