@@ -3,6 +3,9 @@
 This is HsShellScript, a library which enables you to use Haskell for tasks which
 are typically done by shell scripts. It requires the Glasgow Haskell Compiler.
 
+More elaborate information can be found on the 
+[HsShellScript Homepage](https://volker-wysk.de/hsshellscript/).
+
 ## Installation and Usage
 
 Cabal is being used. You can just import the parts of HsShellScript and build your program with cabal.
@@ -15,12 +18,7 @@ The documentation is in the API documentation. There you'll also find some examp
 ## License
 
 HsShellScript is released under the terms of the GNU Lesser General Public License
-(LGPL), version 2.1, or any later version. A copy of the license is included in
-the user manual.
-
-## Home
-
-The (outdated, at the moment) homepage is at http://www.volker-wysk.de/hsshellscript.
+(LGPL), version 2.1, or any later version.
 
 ## Author
 

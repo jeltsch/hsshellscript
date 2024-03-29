@@ -56,7 +56,7 @@ category:           System
 build-type:         Simple
 
 -- Extra doc files to be distributed with the package, such as a CHANGELOG or a README.
-extra-doc-files:    CHANGELOG.md, README, manual/*.html, manual/LICENSE
+extra-doc-files:    CHANGELOG.md, README.md
 
 Extra-source-files:  Makefile
 
@@ -65,32 +65,6 @@ Extra-source-files:  Makefile
 
 common warnings
 --    ghc-options: -Wall
-
-
--- 21.03.2024 Vom neuen "cabal init" erzeugt:
---
--- library
---     -- Import common warning flags.
---     import:           warnings
-
---     -- Modules exported by the library.
---     exposed-modules:  MyLib
-
---     -- Modules included in this library but not exported.
---     -- other-modules:
-
---     -- LANGUAGE extensions used by modules in this package.
---     -- other-extensions:
-
---     -- Other library packages from which modules are imported.
---     build-depends:    base ^>=4.13.0.0
-
---     -- Directories containing source files.
---     hs-source-dirs:   src
-
---     -- Base language which the package is written in.
---     default-language: Haskell2010
-
 
 
 Library
