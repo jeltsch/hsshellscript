@@ -1,5 +1,9 @@
 # Revision history for HsShellScript
 
+## 3.6.2 -- 2024-03-30
+
+* Haddock out-of-scope warnings.
+
 ## 3.6.1 -- 2024-03-30
 
 * Fixed a cabal dependency problem.
