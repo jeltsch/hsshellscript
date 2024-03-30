@@ -6,11 +6,12 @@ module HsShellScript.Paths where
 import Data.List
 import System.Directory
 
+
 {- | Split a path in components. Repeated \"@\/@\" characters don\'t lead to empty
 components. \"@.@\" path components are removed. If the path is absolute, the first component
 will start with \"@\/@\". \"@..@\" components are left intact. They can't be simply
 removed, because the preceding component might be a symlink. In this case,
-'realpath' is probably what you need.
+'HsShellScript.Commands.realpath' is probably what you need.
 
 The case that the path is empty is treated like \"@.@\", yielding an empty path components list.
 
@@ -22,7 +23,7 @@ Examples:
 >slice_path "."        = []
 >slice_path ""         = []
 
-See 'unslice_path', 'realpath', 'realpath_s'.
+See 'unslice_path', 'HsShellScript.Commands.realpath', 'HsShellScript.Commands.realpath_s'.
 -}
 slice_path :: String    -- ^ The path to be broken to components.
            -> [String]  -- ^ List of path components.
@@ -61,8 +62,8 @@ unslice_path cs = concat (intersperse "/" cs)
 
 Note that the normalised path isn't 100% equivalent to the original one. Any trailing slash is removed. When the
 last path component is a symbolic link, then both paths denote the same thing, except for in the context of the
-'readlink' call. It will fail when the trailing slash is present (because then the path denotes the directory which
-the link points to), but it will succeed when it is absent.
+'HsShellScript.Commands.readlink' call. It will fail when the trailing slash is present (because then the path
+denotes the directory which the link points to), but it will succeed when it is absent.
 
 >normalise_path = unslice_path . slice_path
 
@@ -86,7 +87,7 @@ component.
 
 Concateneting the name components and adding dots, reproduces the
 original name, with a normalised path:
-@concat . intersperse \".\" . 'slice_filename' == 'normalise'@.
+@concat . intersperse \".\" . 'slice_filename' == 'HsShellScript.Commands.normalise'@.
 
 Note that the last path component might be \"@..@\". Then it is not
 possible to deduce the refered directory's name from the path. An IO

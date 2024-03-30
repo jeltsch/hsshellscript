@@ -34,7 +34,7 @@ shell_command k par =
 -- from the bash source code. Bash in turn, implements POSIX 1003.2. So the
 -- result produced should be correct. From the bash info pages:
 -- \"... the rules for evaluation and quoting are taken from the POSIX
--- 1003.2 specification for the `standard' Unix shell.\"
+-- 1003.2 specification for the standard Unix shell.\"
 --
 -- Note: The quoted strings are correctly recognized in shell scripts. But the shell bash has an annoying history
 -- expansion \"feature\", which causes it to choke on exclamation marks, when in interactive mode, even when quoted

@@ -4,7 +4,8 @@ module HsShellScript (
               module HsShellScript.Args,
 
               -- * Paths and Directories
-              mkdir, rmdir, pwd, cd, realpath, realpath_s, path_exists, path_exists', is_file, is_dir, with_wd,
+              mkdir, rmdir, pwd, cd, realpath, realpath_s,
+              path_exists, path_exists', is_file, is_dir, with_wd,  
               
               -- ** Parsing and Composing Paths
               module HsShellScript.Paths,

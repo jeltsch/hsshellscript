@@ -1151,7 +1151,7 @@ h_pipe_to io = do
 -- >
 -- >   putStrLn res
 --
--- See 'exec', 'pipe_to', 'pipe_from2', 'h_pipe_from', 'lazy_pipe_from', 'chomp', 'silently'.
+-- See 'exec', 'pipe_to', 'pipe_from2', 'h_pipe_from', 'lazy_pipe_from', 'HsShellScript.Misc.chomp', 'silently'.
 pipe_from :: IO a               -- ^ Action to run as a separate process. Its
                                 -- return value is ignored.
           -> IO String          -- ^ The action's standard output
@@ -1291,7 +1291,7 @@ pipe_from2 io = do
 --
 -- >(h,pid) <- h_pipe_from $ exec "/usr/bin/foo" ["bar"]
 --
--- See 'exec', 'pipe_to', 'h_pipe_from2', 'pipe_from', 'lazy_pipe_from', 'chomp', 'silently'.
+-- See 'exec', 'pipe_to', 'h_pipe_from2', 'pipe_from', 'lazy_pipe_from', 'HsShellScript.Misc.chomp', 'silently'.
 -- See "HsShellScript#fdpipes" for more details.
 h_pipe_from :: IO a                             -- ^ Action to run as a separate process, and to pipe from
             -> IO (Handle, ProcessID)           -- ^ Returns handle connected to the standard output of the child
@@ -1345,7 +1345,7 @@ h_pipe_from io = do
 -- >(h,pid) <- h_pipe_from $ exec "/usr/bin/foo" ["bar"]
 --
 -- See 'exec', 'pipe_from', 'pipe_from2', 'h_pipe_from', 'pipe_to',
--- 'lazy_pipe_from', 'chomp', 'silently'.
+-- 'lazy_pipe_from', 'HsShellScript.Misc.chomp', 'silently'.
 h_pipe_from2 :: IO a                             -- ^ Action to run as a separate process, and to pipe from
              -> IO (Handle, ProcessID)           -- ^ Returns handle connected to the standard output of the child
                                                  -- process, and the child's process ID
@@ -1593,7 +1593,7 @@ lazy_pipe_from2 io = do
 --
 -- This is a frontend to the 'h_pipe_from' function. See there for more details.
 --
--- See 'pipe_from_full2', 'exec', 'pipe_to', 'pipe_from', 'h_pipe_from', 'lazy_pipe_from', 'chomp'.
+-- See 'pipe_from_full2', 'exec', 'pipe_to', 'pipe_from', 'h_pipe_from', 'lazy_pipe_from', 'HsShellScript.Misc.chomp'.
 
 pipe_from_full
   :: IO a                       -- ^ Action to run as a separate process. Its return value is ignored.
@@ -1620,7 +1620,8 @@ pipe_from_full io = do
 --
 -- This is a frontend to the 'h_pipe_from2' function. See there for more details.
 --
--- See 'pipe_from_full', 'exec', 'pipe_to', 'pipe_from', 'h_pipe_from', 'lazy_pipe_from', 'chomp'.
+-- See 'pipe_from_full', 'exec', 'pipe_to', 'pipe_from', 'h_pipe_from', 'lazy_pipe_from',
+-- 'HsShellScript.Misc.chomp'.
 
 pipe_from_full2
   :: IO a                       -- ^ Action to run as a separate process. Its return value is ignored.

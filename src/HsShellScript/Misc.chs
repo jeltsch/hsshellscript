@@ -486,7 +486,7 @@ glob pattern = do
 -- 
 -- You can't use @quote@ or @shell_quote@.
 --
--- See 'glob', 'quote', 'shell_quote'
+-- See 'glob', 'HsShellScript.Shell.quote', 'HsShellScript.Shell.shell_quote'
 glob_quote :: String
            -> String
 glob_quote path = 
