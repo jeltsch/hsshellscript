@@ -1,5 +1,9 @@
 # Revision history for HsShellScript
 
+## 3.6.1 -- 2024-03-30
+
+* Fixed a cabal dependency problem.
+
 ## 3.6.0 -- 2024-03-28
 
 * First version using the latest Cabal infrastructure.
