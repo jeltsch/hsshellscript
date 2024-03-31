@@ -1,5 +1,10 @@
 # Revision history for HsShellScript
 
+## 3.6.3 -- 2024-03-31
+
+* Fixed Hackage version conflict of the base package. See the thread "Hackage: "Build: PlanningFailed"" in the
+  mailing ist haskell-cafe.
+
 ## 3.6.2 -- 2024-03-30
 
 * Haddock out-of-scope warnings.
