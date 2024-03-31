@@ -1,9 +1,13 @@
 # Revision history for HsShellScript
 
+## 3.6.4 -- XXX  Next version
+
+* Set the upper bound of the version of the base package to "< 5" (in hsshellscript.cabal).
+
 ## 3.6.3 -- 2024-03-31
 
 * Fixed Hackage version conflict of the base package. See the thread "Hackage: "Build: PlanningFailed"" in the
-  mailing ist haskell-cafe.
+  mailing list haskell-cafe.
 
 ## 3.6.2 -- 2024-03-30
 
