@@ -1,8 +1,9 @@
 # Revision history for HsShellScript
 
-## 3.6.4 -- XXX  Next version
+## 3.6.4 -- 2024-04-01
 
-* Set the upper bound of the version of the base package to "< 5" (in hsshellscript.cabal).
+* Set the bounds of the version of the base package back to base >= 4.13.0 && < 4.14 for now, since it doesn't
+  compile with the newer GHC version on Hackage. This means that newer compilers aren't supported.
 
 ## 3.6.3 -- 2024-03-31
 
