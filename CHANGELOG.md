@@ -1,5 +1,9 @@
 # Revision history for HsShellScript
 
+## 3.6.5 -- XXX
+
+* Deleted obsolete Makefile. Using cabal-install directly.
+
 ## 3.6.4 -- 2024-04-03
 
 * Ported HsShellScript to GHC 9.4.8. That was just a trivial change.
