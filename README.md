@@ -8,13 +8,8 @@ More elaborate information can be found on the
 
 ## Status
 
-**NOTE: This package runs only on GHC 8.8**, since there are breaking API changes in later versions. HsShellScript
-needs to be ported to the latest GHC version. For that, I need a working Haskell installation with the latest
-versions first. My version is from the haskell-platform package in Ubuntu 22.04 LTS. See
-[Base package](https://wiki.haskell.org/Base_package) for a list of GHC versions and the included base package
-version.
-
-When you have a newer GHC version, you could try to port it by yourself. It's just three simple errors.
+I've ported HsShellScript to base-4.17.2 (GHC 9.4/9.5). That's the recommended version (as of 2024-04-02). From
+what I've learnt, I set the bounds of the version of the base package to ">= 4.17.0.0 && < 5".
 
 ## Installation and Usage
 

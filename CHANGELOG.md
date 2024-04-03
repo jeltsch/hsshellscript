@@ -1,9 +1,10 @@
 # Revision history for HsShellScript
 
-## 3.6.4 -- 2024-04-01
+## 3.6.4 -- 2024-04-03
 
-* Set the bounds of the version of the base package back to base >= 4.13.0 && < 4.14 for now, since it doesn't
-  compile with the newer GHC version on Hackage. This means that newer compilers aren't supported.
+* Ported HsShellScript to GHC 9.4.8. That was just a trivial change.
+* Set the bounds of the version of the base package to ">= 4.17.0.0 && < 5".
+* Removed terminal_width_ioe and terminal_width from Args.hs-boot.
 
 ## 3.6.3 -- 2024-03-31
 
@@ -23,4 +24,3 @@
 * First version using the latest Cabal infrastructure.
 * Added pipe_from_full and pipe_from_full2
 * Reformatted the source code and the comments such that they aren's so wide.
-
