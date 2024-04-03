@@ -8,8 +8,8 @@ More elaborate information can be found on the
 
 ## Status
 
-I've ported HsShellScript to base-4.17.2 (GHC 9.4/9.5). That's the recommended version (as of 2024-04-02). From
-what I've learnt, I set the bounds of the version of the base package to ">= 4.17.0.0 && < 5".
+I've ported HsShellScript to base >= 4.17.0.0 && < 5 (GHC 9.4.4 and up). That's the recommended version (as of
+2024-04-02). From what I've learnt, I set the bounds of the version of the base package to ">= 4.17.0.0 && < 5".
 
 ## Installation and Usage
 
