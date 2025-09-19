@@ -22,20 +22,18 @@ import GHC.Conc
 import GHC.IO hiding (finally, bracket)
 import GHC.IO.Exception                    -- SystemError, ioe_*
 import GHC.IO.Handle
-import GHC.IO.Handle.Internals             -- withHandle', do_operation
 import GHC.IO.Handle.Types hiding (close)
 import Prelude hiding (catch)
 import System.Directory
 import System.Environment
 import System.Exit
 import System.IO
+import System.IO.OS
 import System.IO.Error hiding (catch)
 import System.Posix
 import System.Posix.IO
 import System.Posix.Process (forkProcess)
 import System.Posix.Types                  -- Fd
-import qualified GHC.IO.FD as FD
-import qualified System.IO.Error                -- mkIOError
 
 import HsShellScript.Args
 import HsShellScript.Shell
@@ -2319,43 +2317,32 @@ handleToFd_noclose h =
 
 
 
-{- About Bas van Dijk's unsafeWithHandleFd:
+{- About this implementation of unsafeWithHandleFd:
 
-   This function is broken. It blocks when called like this:
+   This function is "broken". It blocks when called like this:
 
    -- Blocks
    unsafeWithHandleFd stdout $ \fd ->
       putStrLn ("stdout: fd = " ++ show fd)
 
-   The job of unsafeWithHandleFd's job is, to keep a reference to
-   the handle, so it won't be garbage collected, while the action is still
-   running. Garbage collecting the handle would close it, as well as the
-   underlying file descriptor, while the latter is still in use by the action.
-   This can't happen as long as use of the file descriptor is encapsulated in the
-   action.
+   The job of unsafeWithHandleFd is to keep a reference to the handle,
+   so it won't be garbage-collected while the action is still running.
+   Garbage-collecting the handle would close it as well as the
+   underlying file descriptor while the latter is still in use by the
+   action. This can't happen as long as the use of the file descriptor
+   is encapsulated in the action.
 
-   This encapsulation can be circumvented by returning the file descriptor, and
-   that's what I do in execute_file. This should usually not be done.
+   This encapsulation can be circumvented by returning the file
+   descriptor, and that's what I do in execute_file. This should usually
+   not be done.
 
-   However, I want to use it on stdin, stdout and stderr, only. These three
-   should never be garbage collected. Under this circumstances, it should be
-   safe to use unsafeWithHandleFd this way.
+   However, I want to use it on stdin, stdout and stderr, only. These
+   three should never be garbage-collected. Under these circumstances,
+   it should be safe to use unsafeWithHandleFd this way.
 -}
 
 unsafeWithHandleFd :: Handle -> (Fd -> IO a) -> IO a
-unsafeWithHandleFd h@(FileHandle _ m)     f = unsafeWithHandleFd' h m f
--- unsafeWithHandleFd h@(DuplexHandle _ _ w) f = unsafeWithHandleFd' h w f
-
-unsafeWithHandleFd' :: Handle -> MVar Handle__ -> (Fd -> IO a) -> IO a
-unsafeWithHandleFd' h m f =
-  withHandle' "unsafeWithHandleFd" h m $ \h_@Handle__{haDevice} ->
-    case cast haDevice of
-      Nothing -> ioError (System.IO.Error.ioeSetErrorString (System.IO.Error.mkIOError IllegalOperation
-                                                             "unsafeWithHandleFd" (Just h) Nothing)
-                         "handle is not a file descriptor")
-      Just fd -> do
-        x <- f (Fd (FD.fdFD fd))
-        return (h_, x)
+unsafeWithHandleFd h f = withFileDescriptorWritingBiasedRaw h $ f . Fd
 
 
 -------------------------------------------------------------------------------------------------------------

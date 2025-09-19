@@ -135,7 +135,6 @@ import Data.Char
 import Debug.Trace
 import Data.Typeable
 import Control.Concurrent.MVar
-import GHC.IO.Handle.Internals             -- withHandle', do_operation
 
 
 
